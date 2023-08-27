@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel Decorative', cursive;
+  background-image: url('/travelnotes.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  min-height: 100vh;
+}
+
+.note-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.note {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  text-align: center;
+  background-color: #fffaf0;
+  border: 2px solid #d2b48c;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 450px;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  margin-top: 290px;
+  margin-left: 25px;
+  padding: 14px;
+  background-color: #8b7355;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+button:hover {
+  background-color: #594832;
+}
