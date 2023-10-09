@@ -1,28 +1,27 @@
 .header {
-    text-align: center;
-    padding: 2rem;
-    background-color: transparent;
-    color: #000000;
-  }
-  
-  .header a {
-    margin-bottom: 4rem;
-    font-size: 70px;
-    text-decoration: none;
-    font-family: 'Cinzel Decorative', cursive;
-    font-weight: bold;
-    color: inherit;
-    position: relative;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
-  }
-  
-  .header a:hover {
-    color: #000000;
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.8);
-  }
-  
+  text-align: center;
+  padding: 2rem;
+  background-color: transparent;
+  color: #000000;
+}
+
+.header a {
+  margin-bottom: 4rem;
+  font-size: 45px;
+  text-decoration: none;
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: bold;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.header a:hover {
+  color: #000000;
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.8);
+}

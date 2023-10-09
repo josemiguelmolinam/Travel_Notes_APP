@@ -4,14 +4,13 @@ const express = require('express');
 const fileUpload = require('express-fileupload');
 const morgan = require('morgan');
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
 
 app.use(
-  cors({
-    origin: 'http://localhost:5173',
-  })
+    cors({
+        origin: 'http://localhost:5173',
+    })
 );
 
 app.use(express.json());
@@ -19,18 +18,12 @@ app.use(express.json());
 app.use(fileUpload());
 
 app.use((req, res, next) => {
-  console.log(`http://localhost:${process.env.PORT}/${req.path}`);
-  next();
+    console.log(`http://localhost:${process.env.PORT}/${req.path}`);
+    next();
 });
 
 // Middleware que muestra información sobre la petición entrante.
 app.use(morgan('dev'));
-
-// Configuración para servir archivos estáticos
-app.use('/uploads_dir', express.static('uploads_dir'));
-
-
-
 
 /*#################################
   ###### Middleware usuarios#######
@@ -67,16 +60,16 @@ app.get('/users', authUser, getUser);
 // Controladores para las notas.
 
 const {
-  newNote,
-  listNotes,
-  getNotes,
-  editNote,
-  deleteNote,
-  createNewCategory,
-  editCategory,
-  deleteCategory,
-  getAllCategories,
-  updateNotePrivacy,
+    newNote,
+    listNotes,
+    getNotes,
+    editNote,
+    deleteNote,
+    createNewCategory,
+    editCategory,
+    deleteCategory,
+    getAllCategories,
+    updateNotePrivacy,
 } = require('./controllers/notes');
 
 // Crear una nueva nota.
@@ -114,22 +107,22 @@ app.put('/public/:noteId', authUser, userExists, updateNotePrivacy);
   #################################*/
 
 app.use((err, req, res, next) => {
-  console.error(err);
+    console.error(err);
 
-  res.status(err.httpStatus || 500).send({
-    status: 'error',
-    message: err.message,
-  });
+    res.status(err.httpStatus || 500).send({
+        status: 'error',
+        message: err.message,
+    });
 });
 
 //Middleware de ruta no encontrada.
 app.use((req, res) => {
-  res.status(404).send({
-    status: 'error',
-    message: 'Ruta no encontrada',
-  });
+    res.status(404).send({
+        status: 'error',
+        message: 'Ruta no encontrada',
+    });
 });
 // Iniciamos el servidor.
 app.listen(process.env.PORT, () => {
-  console.log(`Server listening at http://localhost:${process.env.PORT}`);
+    console.log(`Server listening at http://localhost:${process.env.PORT}`);
 });

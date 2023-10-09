@@ -11,14 +11,15 @@ const insertNoteQuery = async (title, text, categoryId, imgName, userId) => {
 
     // Ejecutar una consulta para insertar una nueva nota en la base de datos
     const [note] = await connection.query(
-      `INSERT INTO notes(title, text, image, categoryId, userId, createdAt) VALUES(?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO notes(title, text,image, categoryId, userId, createdAt) VALUES(?, ?, ?, ?, ?, ?)`,
       [title, text, imgName, categoryId, userId, createdAt]
     );
 
     return {
+      id: note.insertId,
       title,
       text,
-      imgName,
+      image: imgName,
       categoryId,
       userId,
       createdAt,
